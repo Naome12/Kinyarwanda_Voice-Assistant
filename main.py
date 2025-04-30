@@ -9,7 +9,7 @@ from transformers import VitsModel, VitsTokenizer
 
 
 # Optional: ensure ffmpeg is on PATH (for audio playback on Windows)
-os.environ["PATH"] += os.pathsep + r"C:\Users\HP PAVILLION\Downloads\ffmpeg-7.1.1-essentials_build\ffmpeg-7.1.1-essentials_build\bin"
+os.environ["PATH"] += os.pathsep + r"C:\Users\Naome\Downloads\Compressed\ffmpeg-7.0.2-essentials_build\ffmpeg-7.0.2-essentials_build\bin"
 
 # Load Whisper model for Kinyarwanda transcription
 asr_model = WhisperForConditionalGeneration.from_pretrained("mbazaNLP/Whisper-Small-Kinyarwanda")
@@ -29,7 +29,7 @@ qa_pairs = {
 }
 
 # Output directory
-output_folder = 'outputs/'
+output_folder = 'data/outputs/'
 os.makedirs(output_folder, exist_ok=True)
 
 def speak_answer(answer_text, output_file):
@@ -46,7 +46,7 @@ def speak_answer(answer_text, output_file):
 
 
 # Folder containing .wav input files
-audio_folder = 'audio/'
+audio_folder = 'data/audio/'
 
 # Process each audio file
 for file_name in os.listdir(audio_folder):
